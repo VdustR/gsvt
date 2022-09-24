@@ -36,6 +36,12 @@ gst <version>
 gst v0.1.0
 ```
 
+And you can push the commit with tags:
+
+```sh
+git push origin main --tags -f
+```
+
 ## License
 
 [MIT](./LICENSE)

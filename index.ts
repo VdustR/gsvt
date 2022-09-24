@@ -39,7 +39,7 @@ function minorOnly(version: VersionStartWithV): `v${number}.${number}` {
 }
 
 function majorOnly(version: VersionStartWithV): `v${number}` {
-  const [major, minor] = parseVersion(version);
+  const [major] = parseVersion(version);
   return `v${major}`;
 }
 
