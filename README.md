@@ -1,8 +1,8 @@
 # gsvt
 
-> Git SemVer Tags
+> Create git semver tags with additional major and minor tags easily
 
-Create git semver tags with additional major and minor tags easily.
+![gsvt](https://vdustr.dev/asset-2022/09-24-gsvt/gsvt-cover.png)
 
 ## Example
 

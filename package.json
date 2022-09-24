@@ -1,6 +1,6 @@
 {
   "name": "gsvt",
-  "description": "Git SemVer Tags",
+  "description": "Create git semver tags with additional major and minor tags easily",
   "keywords": [
     "git",
     "semver",
