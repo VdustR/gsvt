@@ -1,0 +1,36 @@
+{
+  "name": "gst",
+  "description": "Git Semver Tags",
+  "keywords": [
+    "git",
+    "semver",
+    "semantic",
+    "version",
+    "cli"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "ViPro",
+    "email": "VdustR@gmail.com",
+    "url": "https://VdustR.github.io"
+  },
+  "bin": "./cli.js",
+  "files": [
+    "cli.js",
+    "index.js"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "cac": "^6.7.14",
+    "simple-git": "^3.14.1"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/git-semver-tags": "^4.1.1",
+    "@types/node": "^18.7.19",
+    "git-semver-tags": "^4.1.1",
+    "typescript": "^4.8.3"
+  }
+}
