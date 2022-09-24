@@ -1,6 +1,6 @@
 {
-  "name": "gst",
-  "description": "Git Semver Tags",
+  "name": "gsvt",
+  "description": "Git SemVer Tags",
   "keywords": [
     "git",
     "semver",
