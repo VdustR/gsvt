@@ -14,7 +14,7 @@
     "email": "VdustR@gmail.com",
     "url": "https://VdustR.github.io"
   },
-  "bin": "./cli.js",
+  "bin": "./cli",
   "files": [
     "cli.js",
     "index.js"
