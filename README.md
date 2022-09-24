@@ -28,7 +28,7 @@ Or use `npx gsvt` directly without installing.
 
 ## Usage
 
-`gsvt` detect the git tags with `v.*.*.*` automatically, and create the next patch
+`gsvt` detect the git tags with `v*.*.*` automatically, and create the next patch
 semver tag.
 
 ```sh
@@ -60,6 +60,6 @@ git push origin main --tags -f
 
 ## License
 
-[MIT](./LICENSE)
+[MIT](https://github.com/VdustR/gsvt/blob/main/LICENSE)
 
 Copyright (c) 2022-preset ViPro (京京)

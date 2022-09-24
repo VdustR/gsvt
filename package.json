@@ -8,6 +8,11 @@
     "version",
     "cli"
   ],
+  "homepage": "https://github.com/VdustR/gsvt",
+  "bugs": {
+    "url": "https://github.com/VdustR/gsvt/issues",
+    "email": "vdustr@gmail.com"
+  },
   "license": "MIT",
   "author": {
     "name": "ViPro",
