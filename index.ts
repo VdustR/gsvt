@@ -5,6 +5,15 @@ import { promisify } from "util";
 
 const asyncGitSemverTags = promisify(gitSemverTags);
 
+const git = simpleGit();
+const asyncTag = (args: Parameters<typeof git.tag>[0]) =>
+  new Promise((resolve, reject) => {
+    git.tag(args, (err, result) => {
+      if (err) reject(err);
+      else resolve(result);
+    });
+  });
+
 const cli = cac();
 
 const semverTagRegex = /^v\d+\.\d+\.\d+$/g;
@@ -60,6 +69,14 @@ function isValidInput(input: string): input is ValidInput {
   );
 }
 
+function versionOrderFn(a: VersionStartWithV, b: VersionStartWithV) {
+  const [majorA, minorA, patchA] = parseVersion(a);
+  const [majorB, minorB, patchB] = parseVersion(b);
+  if (majorA !== majorB) return majorB - majorA;
+  if (minorA !== minorB) return minorB - minorA;
+  return patchB - patchA;
+}
+
 cli
   .command("[tag]", "Add semver tags to the current commit")
   .action(async (input = "patch") => {
@@ -67,9 +84,11 @@ cli
       throw new Error(
         `Invalid input: ${input}, expected: patch, minor, major or semver version like 'v1.2.3'`
       );
-    const existsTags = (await asyncGitSemverTags()).flatMap((tag) => {
-      return tag.match(semverTagRegex) ? [tag as VersionStartWithV] : [];
-    });
+    const existsTags = (await asyncGitSemverTags())
+      .flatMap((tag) => {
+        return tag.match(semverTagRegex) ? [tag as VersionStartWithV] : [];
+      })
+      .sort(versionOrderFn);
     const latestTag = existsTags[0] || "v0.0.0";
     const nextTag =
       input === "patch"
@@ -79,11 +98,10 @@ cli
         : input === "major"
         ? major(latestTag)
         : input;
-    console.log("nextTag tag:", nextTag);
-    const git = simpleGit();
-    git.addTag(nextTag);
-    git.addTag(minorOnly(nextTag));
-    git.addTag(majorOnly(nextTag));
+
+    await asyncTag([nextTag]);
+    await asyncTag([minorOnly(nextTag), "-f"]);
+    await asyncTag([majorOnly(nextTag), "-f"]);
   });
 
 cli.parse();
