@@ -2,7 +2,7 @@
 
 > Create git semver tags with additional major and minor tags easily
 
-![gsvt](https://vdustr.dev/asset-2022/09-24-gsvt/gsvt-cover.png)
+![gsvt](https://vdustr.github.io/asset-2022/09-24-gsvt/gsvt-cover.png)
 
 ## Example
 
