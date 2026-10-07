@@ -1,6 +1,6 @@
 import cac from "cac";
 import gitSemverTags from "git-semver-tags";
-import simpleGit from "simple-git";
+import { simpleGit } from "simple-git";
 import { promisify } from "util";
 
 const asyncGitSemverTags = promisify(gitSemverTags);
