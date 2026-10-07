@@ -9,6 +9,10 @@
     "cli"
   ],
   "homepage": "https://github.com/VdustR/gsvt",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VdustR/gsvt.git"
+  },
   "bugs": {
     "url": "https://github.com/VdustR/gsvt/issues",
     "email": "vdustr@gmail.com"
